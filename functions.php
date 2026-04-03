@@ -14,7 +14,8 @@ function pridajPozdrav()
     echo "Aktuálny čas je " . date("H:i:s") . "<br>";
 }
 
-function generateSlides($dir) {
+function generateSlides($dir)
+{
     $files = glob($dir . "/*.jpg");
     $json = file_get_contents("data/datas.json");
     $data = json_decode($json, true);
@@ -30,7 +31,8 @@ function generateSlides($dir) {
     }
 }
 
-function insertQnA(){
+function insertQnA()
+{
     $json = file_get_contents("data/datas.json");
     $data = json_decode($json, true);
     $otazky = $data["otazky"];
@@ -47,4 +49,34 @@ function insertQnA(){
 
     echo '</section>';
 }
+
+function generatePortfolio()
+{
+    $json = file_get_contents("data/datas.json");
+    $data = json_decode($json, true);
+    $projects = $data["projects"];
+
+    echo '<section class="container">';
+
+    $chunks = array_chunk($projects, 4);
+
+    foreach ($chunks as $rowIndex => $row) {
+        echo '<div class="row">';
+
+        foreach ($row as $index => $project) {
+            $id = $rowIndex * 4 + $index + 1;
+
+            echo "
+                <div class='col-25 portfolio text-white text-center' id='portfolio-$id'>
+                    $project
+                </div>
+            ";
+        }
+
+        echo '</div>';
+    }
+
+    echo '</section>';
+}
+
 ?>

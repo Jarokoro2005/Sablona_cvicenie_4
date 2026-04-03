@@ -19,20 +19,7 @@ include_once("functions.php");
 
   <main>
     <section class="slides-container">
-      <div class="slide fade">
-        <img src="img/banner1.jpg" />
-        <div class="slide-text">Prvý nadpis</div>
-      </div>
-
-      <div class="slide fade">
-        <img src="img/banner2.jpg" />
-        <div class="slide-text">Druhý nadpis</div>
-      </div>
-
-      <div class="slide fade">
-        <img src="img/banner3.jpg" />
-        <div class="slide-text">Tretí nadpis</div>
-      </div>
+      <?php generateSlides("img/banner"); ?>
 
       <a id="prev" class="prev">❮</a>
       <a id="next" class="next">❯</a>
@@ -79,8 +66,8 @@ include_once("functions.php");
     </section>
   </main>
 
-  <?php include ("parts/footer.php"); ?>
-  
+  <?php include("parts/footer.php"); ?>
+
 
   <script src="js/menu.js"></script>
   <script src="js/slider.js"></script>

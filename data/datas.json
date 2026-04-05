@@ -25,5 +25,12 @@
     "Web stránka 6",
     "Web stránka 7",
     "Web stránka 8"
-  ]
+  ],
+  "stranky": {
+    "index": ["css/style.css", "css/slider.css"],
+    "thankyou": ["css/style.css", "css/slider.css"],
+    "portfolio": ["css/style.css", "css/banner.css", "css/portfolio.css"],
+    "qna": ["css/style.css", "css/banner.css", "css/accordion.css"],
+    "kontakt": ["css/style.css", "css/banner.css", "css/form.css"]
+  }
 }

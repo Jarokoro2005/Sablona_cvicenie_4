@@ -79,4 +79,109 @@ function generatePortfolio()
     echo '</section>';
 }
 
+function validateMenuType(string $type): bool
+{
+    $menuTypes = ["header", "footer"];
+    return in_array($type, $menuTypes);
+}
+
+function getMenuData(string $type): array
+{
+    if (!validateMenuType($type)) {
+        return [];
+    }
+
+    $menu = [];
+
+    if ($type == "header") {
+        $menu = [
+            "domov" => [
+                "name" => "Domov",
+                "path" => "index.php"
+            ],
+            "portfolio" => [
+                "name" => "Portfólio",
+                "path" => "portfolio.php"
+            ],
+            "qna" => [
+                "name" => "Q&A",
+                "path" => "qna.php"
+            ],
+            "kontakt" => [
+                "name" => "Kontakt",
+                "path" => "kontakt.php"
+            ]
+        ];
+    }
+
+    if ($type == "footer") {
+        $menu = [
+            "domov" => [
+                "name" => "Domov",
+                "path" => "index.php"
+            ],
+            "kontakt" => [
+                "name" => "Kontakt",
+                "path" => "kontakt.php"
+            ]
+        ];
+    }
+
+    return $menu;
+}
+
+function printMenu(array $menu): void
+{
+    foreach ($menu as $menuItem) {
+        echo '<li><a href="' . $menuItem["path"] . '">' . $menuItem["name"] . '</a></li>';
+    }
+}
+
+function getCSS(): void
+{
+    $jsonStr = file_get_contents("data/datas.json");
+    $data = json_decode($jsonStr, true);
+
+    $stranka = basename($_SERVER['REQUEST_URI']);
+    $stranka = explode(".", $stranka)[0];
+
+    if (isset($data["stranky"][$stranka])) {
+        $suboryCSS = $data["stranky"][$stranka];
+
+        foreach ($suboryCSS as $subor) {
+            echo "<link rel='stylesheet' href='$subor'>";
+        }
+    }
+}
+
+function preparePortfolio(int $numberOfRows = 2, int $numberOfCols = 4): array
+{
+    $portfolio = [];
+    $colIndex = 1;
+
+    for ($i = 1; $i <= $numberOfRows; $i++) {
+        for ($j = 1; $j <= $numberOfCols; $j++) {
+            $portfolio[$i][$j] = $colIndex;
+            $colIndex++;
+        }
+    }
+
+    return $portfolio;
+}
+
+function finishPortfolio(): void
+{
+    $portfolio = preparePortfolio();
+
+    foreach ($portfolio as $row => $col) {
+        echo '<div class="row">';
+        foreach ($col as $index) {
+            echo '<div class="col-25 portfolio text-white text-center" id="portfolio-' . $index . '">
+                    Web stránka ' . $index . '
+                  </div>';
+        }
+        echo '</div>';
+    }
+}
+
 ?>

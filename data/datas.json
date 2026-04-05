@@ -32,5 +32,39 @@
     "portfolio": ["css/style.css", "css/banner.css", "css/portfolio.css"],
     "qna": ["css/style.css", "css/banner.css", "css/accordion.css"],
     "kontakt": ["css/style.css", "css/banner.css", "css/form.css"]
+  },
+  "portfolio": {
+    "1": {
+      "title": "Môj e-shop",
+      "url": "https://example.com"
+    },
+    "2": {
+      "title": "Firemná stránka",
+      "url": "https://example.com"
+    },
+    "3": {
+      "title": "Blog projekt",
+      "url": "https://example.com"
+    },
+    "4": {
+      "title": "Fitness web",
+      "url": "https://example.com"
+    },
+    "5": {
+      "title": "Reštauračný web",
+      "url": "https://example.com"
+    },
+    "6": {
+      "title": "Fotograf portfólio",
+      "url": "https://example.com"
+    },
+    "7": {
+      "title": "Rezervačný systém",
+      "url": "https://example.com"
+    },
+    "8": {
+      "title": "Maturitný projekt",
+      "url": "https://example.com"
+    }
   }
 }

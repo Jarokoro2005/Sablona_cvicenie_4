@@ -172,16 +172,28 @@ function preparePortfolio(int $numberOfRows = 2, int $numberOfCols = 4): array
 function finishPortfolio(): void
 {
     $portfolio = preparePortfolio();
+    $portfolioData = getPortfolioData();
 
-    foreach ($portfolio as $row => $col) {
+    foreach ($portfolio as $row) {
         echo '<div class="row">';
-        foreach ($col as $index) {
-            echo '<div class="col-25 portfolio text-white text-center" id="portfolio-' . $index . '">
-                    Web stránka ' . $index . '
+        foreach ($row as $index) {
+            $title = $portfolioData[$index]["title"];
+            $url = $portfolioData[$index]["url"];
+
+            echo '<div class="col-25 portfolio text-center" id="portfolio-' . $index . '">
+                    <a href="' . $url . '" target="_blank" style="color: yellow; text-decoration: none;">' . $title . '</a>
                   </div>';
         }
         echo '</div>';
     }
 }
 
+
+function getPortfolioData(): array
+{
+    $jsonStr = file_get_contents("data/datas.json");
+    $data = json_decode($jsonStr, true);
+
+    return $data["portfolio"];
+}
 ?>

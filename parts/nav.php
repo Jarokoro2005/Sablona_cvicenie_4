@@ -1,15 +1,21 @@
 <?php
-$menu = getMenuData("header");
-?>
+include_once "functions.php";
 
-<header class="container main-header">
+$menu = getMenuData(type: "header");
+
+$theme = $_GET["theme"];
+
+?>
+<header style="background-color: <?php echo $theme === "dark" ? "grey" : "white"; ?>" class="container main-header">
     <div class="logo-holder">
-        <a href="<?php echo $menu["domov"]["path"]; ?>">
-            <img src="img/logo.png" height="40">
+        <a href="<?php echo $menu['domov']['path']; ?>">
+
+            <img alt="img" src="img/logo.png" height="40">
         </a>
     </div>
     <nav class="main-nav">
-        <ul class="main-menu" id="main-menu"> <!-- Opraveno: odstraněn "container" z id -->
+        <ul class="main-menu" id="main-menu container">
+            <a href=<?php echo $theme === "dark" ? "?theme=light" : "?theme=dark"; ?>>Dark/light theme</a>
             <?php printMenu($menu); ?>
         </ul>
         <a class="hamburger" id="hamburger">

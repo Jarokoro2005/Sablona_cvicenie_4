@@ -145,6 +145,11 @@ function getCSS(): void
     $stranka = basename($_SERVER['REQUEST_URI']);
     $stranka = explode(".", $stranka)[0];
 
+    // Ak stránka neexistuje v JSON, nastav na index
+    if (!isset($data["stranky"][$stranka])) {
+        $stranka = "index";
+    }
+
     if (isset($data["stranky"][$stranka])) {
         $suboryCSS = $data["stranky"][$stranka];
 
@@ -179,8 +184,9 @@ function finishPortfolio(): void
         foreach ($row as $index) {
             $title = $portfolioData[$index]["title"];
             $url = $portfolioData[$index]["url"];
+            $imageUrl = "img/portfolio/portfolio" . $index . ".jpg";
 
-            echo '<div class="col-25 portfolio text-center" id="portfolio-' . $index . '">
+            echo '<div class="col-25 portfolio text-center" id="portfolio-' . $index . '" style="background-image: url(\'' . $imageUrl . '\'); background-size: cover; background-position: center;">
                     <a href="' . $url . '" target="_blank" style="color: yellow; text-decoration: none;">' . $title . '</a>
                   </div>';
         }

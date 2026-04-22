@@ -2,15 +2,13 @@
 .portfolio {
   height: 250px;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: darken;
-  transition:
-    background-color 0.3s,
-    background-blend-mode 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
@@ -22,28 +20,28 @@
 
 /* --- Obrázky podľa ID --- */
 #portfolio-1 {
-  background-image: url("../img/portfolio/1.jpg");
+  background-image: url("../img/portfolio/portfolio1.jpg");
 }
 #portfolio-2 {
-  background-image: url("../img/portfolio/2.jpg");
+  background-image: url("../img/portfolio/portfolio2.jpg");
 }
 #portfolio-3 {
-  background-image: url("../img/portfolio/3.jpg");
+  background-image: url("../img/portfolio/portfolio3.jpg");
 }
 #portfolio-4 {
-  background-image: url("../img/portfolio/4.jpg");
+  background-image: url("../img/portfolio/portfolio4.jpg");
 }
 #portfolio-5 {
-  background-image: url("../img/portfolio/5.jpg");
+  background-image: url("../img/portfolio/portfolio5.jpg");
 }
 #portfolio-6 {
-  background-image: url("../img/portfolio/6.jpg");
+  background-image: url("../img/portfolio/portfolio6.jpg");
 }
 #portfolio-7 {
-  background-image: url("../img/portfolio/7.jpg");
+  background-image: url("../img/portfolio/portfolio7.jpg");
 }
 #portfolio-8 {
-  background-image: url("../img/portfolio/8.jpg");
+  background-image: url("../img/portfolio/portfolio8.jpg");
 }
 
 /* --- Linky v portfóliu (super špecifické) --- */

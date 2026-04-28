@@ -23,8 +23,11 @@ include_once("functions.php");
     </section>
     <section class="container">
       <?php
-      include_once "functions.php";
-      insertQnA();
+      // Načítanie triedy QnAClass a zobrazenie otázok a odpovedí z databázy
+      include_once "QnAClass.php";
+
+      $qna = new QnAClass();
+      echo $qna->displayQnA();
       ?>
     </section>
 

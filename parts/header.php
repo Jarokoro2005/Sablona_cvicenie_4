@@ -1,8 +1,14 @@
 <?php
 include_once("functions.php");
 
-// Získanie témy z URL (?theme=dark alebo ?theme=light)
-$theme = $_GET["theme"] ?? "light";
+// Ak je GET parameter theme, nastav cookie a presmeruj
+if (isset($_GET['theme'])) {
+    setcookie('theme', $_GET['theme'], time() + (365 * 24 * 60 * 60), '/');
+    $_COOKIE['theme'] = $_GET['theme'];
+}
+
+// Čítaj tému z cookies
+$theme = $_COOKIE['theme'] ?? 'light';
 ?>
 
 <!doctype html>
@@ -18,13 +24,8 @@ $theme = $_GET["theme"] ?? "light";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
-<body>
+<body class="<?= $theme === 'dark' ? 'dark-theme' : 'light-theme' ?>">
 
-    <header class="container main-header <?= $theme === 'dark' ? 'dark-theme' : 'light-theme' ?>">
-
-        <!-- Prepínač témy -->
-        <a href="<?= $theme === 'dark' ? '?theme=light' : '?theme=dark' ?>">
-            Zmena témy
-        </a>
+    <header class="container main-header">
 
     </header>

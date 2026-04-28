@@ -23,11 +23,17 @@ include_once("functions.php");
     </section>
     <section class="container">
       <?php
-      // Načítanie triedy QnAClass a zobrazenie otázok a odpovedí z databázy
-      include_once "QnAClass.php";
+      // Načítanie autoloderu a triedy QnA s detekciou chýb
+      require_once "Autoloader.php";
 
-      $qna = new QnAClass();
-      echo $qna->displayQnA();
+      use App\Models\QnA;
+
+      try {
+        $qna = new QnA();
+        echo $qna->displayQnA();
+      } catch (Exception $e) {
+        echo '<p class="text-center" style="color: red;">Chyba pri načítaní otázok a odpovedí: ' . htmlspecialchars($e->getMessage()) . '</p>';
+      }
       ?>
     </section>
 

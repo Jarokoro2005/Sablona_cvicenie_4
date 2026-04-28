@@ -162,6 +162,9 @@ function getCSS(): void
             echo "<link rel='stylesheet' href='$subor'>";
         }
     }
+
+    // Vždy načítaj theme.css pre tmavú a svetlú tému
+    echo "<link rel='stylesheet' href='css/theme.css'>";
 }
 
 function preparePortfolio(int $numberOfRows = 2, int $numberOfCols = 4): array

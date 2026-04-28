@@ -1,0 +1,224 @@
+/**
+ * Theme CSS - Tmavá a svetlá téma
+ * 
+ * Tento súbor obsahuje CSS štýly pre:
+ * - light-theme: Svetlá téma (predvolené)
+ * - dark-theme: Tmavá téma
+ */
+
+/* ===== SVETLÁ TÉMA (light-theme) ===== */
+body.light-theme {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+body.light-theme header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+body.light-theme .main-menu li a {
+  color: #1a1a1a;
+}
+
+body.light-theme .main-menu li a:hover {
+  color: #007bff;
+}
+
+body.light-theme a {
+  color: #007bff;
+}
+
+body.light-theme main section:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+body.light-theme .container {
+  color: #1a1a1a;
+}
+
+body.light-theme footer {
+  background-color: #f7f7f7;
+  border-top: 1px solid #e0e0e0;
+}
+
+body.light-theme .accordion {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+body.light-theme .accordion:hover {
+  background-color: #f0f0f0;
+}
+
+body.light-theme .question {
+  color: #1a1a1a;
+}
+
+body.light-theme .answer {
+  color: #1a1a1a;
+}
+
+body.light-theme .text-dark {
+  color: #1a1a1a;
+}
+
+/* ===== TMAVÁ TÉMA (dark-theme) ===== */
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-theme header {
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #444444;
+}
+
+body.dark-theme .main-menu li a {
+  color: #e0e0e0;
+}
+
+body.dark-theme .main-menu li a:hover {
+  color: #56ccf2;
+}
+
+body.dark-theme a {
+  color: #56ccf2;
+  text-decoration: none;
+}
+
+body.dark-theme a:hover {
+  text-decoration: underline;
+}
+
+body.dark-theme main section:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+body.dark-theme main section:nth-child(odd) {
+  background-color: #1a1a1a;
+}
+
+body.dark-theme .container {
+  color: #e0e0e0;
+}
+
+body.dark-theme footer {
+  background-color: #2a2a2a;
+  border-top: 1px solid #444444;
+}
+
+body.dark-theme footer p {
+  color: #e0e0e0;
+}
+
+body.dark-theme footer p a {
+  color: #56ccf2;
+}
+
+body.dark-theme .accordion {
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+  color: #e0e0e0;
+}
+
+body.dark-theme .accordion:hover {
+  background-color: #333333;
+  border-color: #555555;
+}
+
+body.dark-theme .question {
+  color: #e0e0e0;
+  background-color: #2a2a2a;
+}
+
+body.dark-theme .answer {
+  color: #e0e0e0;
+  background-color: #1f1f1f;
+}
+
+body.dark-theme .text-dark {
+  color: #e0e0e0;
+}
+
+body.dark-theme .banner {
+  background-color: #0d0d0d;
+}
+
+body.dark-theme .portfolio {
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+}
+
+body.dark-theme .portfolio:hover {
+  background-color: #333333;
+}
+
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444444;
+}
+
+body.dark-theme input:focus,
+body.dark-theme textarea:focus,
+body.dark-theme select:focus {
+  background-color: #333333;
+  color: #e0e0e0;
+  border-color: #56ccf2;
+  outline: none;
+}
+
+body.dark-theme button,
+body.dark-theme input[type="submit"] {
+  background-color: #56ccf2;
+  color: #1a1a1a;
+  border: none;
+}
+
+body.dark-theme button:hover,
+body.dark-theme input[type="submit"]:hover {
+  background-color: #3fa9d6;
+}
+
+body.dark-theme .row {
+  border-color: #444444;
+}
+
+body.dark-theme .main-menu.responsive {
+  background-color: #2a2a2a;
+  border-bottom: 1px solid #444444;
+}
+
+body.dark-theme .main-menu.responsive li a {
+  color: #e0e0e0;
+}
+
+/* Theme toggle button */
+header a[href*="theme"] {
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+body.light-theme header a[href*="theme"] {
+  background-color: #f0f0f0;
+  color: #1a1a1a;
+  border: 1px solid #ddd;
+}
+
+body.light-theme header a[href*="theme"]:hover {
+  background-color: #e0e0e0;
+}
+
+body.dark-theme header a[href*="theme"] {
+  background-color: #333333;
+  color: #e0e0e0;
+  border: 1px solid #555555;
+}
+
+body.dark-theme header a[href*="theme"]:hover {
+  background-color: #444444;
+}

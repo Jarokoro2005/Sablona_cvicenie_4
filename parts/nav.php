@@ -3,10 +3,11 @@ include_once "functions.php";
 
 $menu = getMenuData(type: "header");
 
-$theme = $_GET["theme"];
+// Čítaj tému z cookies
+$theme = $_COOKIE['theme'] ?? 'light';
 
 ?>
-<header style="background-color: <?php echo $theme === "dark" ? "grey" : "white"; ?>" class="container main-header">
+<header class="container main-header">
     <div class="logo-holder">
         <a href="<?php echo $menu['domov']['path']; ?>">
 
@@ -15,7 +16,7 @@ $theme = $_GET["theme"];
     </div>
     <nav class="main-nav">
         <ul class="main-menu" id="main-menu container">
-            <a href=<?php echo $theme === "dark" ? "?theme=light" : "?theme=dark"; ?>>Dark/light theme</a>
+            <a href="?theme=<?php echo $theme === "dark" ? "light" : "dark"; ?>">Dark/light theme</a>
             <?php printMenu($menu); ?>
         </ul>
         <a class="hamburger" id="hamburger">

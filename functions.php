@@ -31,6 +31,10 @@ function generateSlides($dir)
     }
 }
 
+/*
+ * ZAKOMENTOVANÁ METÓDA - už nie je potrebná
+ * Nahradená triedou QnAClass, ktorá číta otázky a odpovede z databázy
+ * 
 function insertQnA()
 {
     $json = file_get_contents("data/datas.json");
@@ -49,6 +53,7 @@ function insertQnA()
 
     echo '</section>';
 }
+*/
 
 function generatePortfolio()
 {
